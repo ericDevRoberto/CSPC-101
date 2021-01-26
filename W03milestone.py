@@ -7,15 +7,15 @@ tax_rate = float(input("What is the sales tax rate? "))
 
 #Subtotal computed and display
 subtotal = round(childs_meal_price * how_many_children + adults_meal_price * how_many_adults, 2)
-print(f"\nSubtotal: ${format(subtotal, '.2f')}")
+print(f"\nSubtotal: ${subtotal:.2f}")
 
 #Sales computed and display
 sales_tax = round(subtotal * (tax_rate / 100), 2)
-print(f"Sales tax: ${format(sales_tax, '.2f')}")
+print(f"Sales tax: ${sales_tax:.2f}")
 
 #Total computed and display
 total = round(subtotal + sales_tax, 2)
-print(f"Total: ${format(total, '.2f')}\n")
+print(f"Total: ${total:.2f}\n")
 
 ##Payment security logic
 payment_denied = True
@@ -34,4 +34,4 @@ while payment_denied:
         payment_denied = False
 
 #Payment display
-print(f"Change: ${format(change, '.2f')}")
+print(f"Change: ${change:.2f}")
