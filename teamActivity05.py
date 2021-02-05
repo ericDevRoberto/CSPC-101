@@ -22,7 +22,7 @@ def split(word):
 
 result = split(str(score))
 
-if int(result[0]) == 9 or int(result[0]) <= 5:
+if int(score) >= 93 or int(result[0]) <= 5:
     print()
 else:
     if int(result[1]) >= 7:
