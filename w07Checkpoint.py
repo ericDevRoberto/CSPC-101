@@ -1,4 +1,4 @@
-number = 0
+number = -1
 candy = "no"
 
 while number < 0:
@@ -9,7 +9,7 @@ while number < 0:
     else:
         print("Sorry, that is a negative number. Please try again.")
 
-while candy != "yes"
-    candy - input("May I have a piece of candy? ")
+while candy != "yes":
+    candy = input("May I have a piece of candy? ")
 
 print("Thank You")
