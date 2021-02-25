@@ -1,8 +1,16 @@
 from PIL import Image
 
-image_original = Image.open(f"beach.jpg")
+print("\nScenarios: BEACH - DESERT - EARTH - FIELD - FOREST - SNOWSCAPE - SUNSET")
 
-cactus_image = Image.open(f"penguin.jpg")
+scenario = input("\nChoose a scenario among that: ").lower()
+
+print("\nObjects: BOAT - CACTUS - CAT - HARVESTER - HIKER - PENGUIN - SPACESHUTTLE")
+
+item = input("\nChoose a object among that: ").lower()
+
+image_original = Image.open(f"{scenario}.jpg")
+
+cactus_image = Image.open(f"{item}.jpg")
 
 pixels_original = image_original.load()
 
@@ -18,13 +26,12 @@ for x in range(0, 800):
 
         (r, g, b) = cactus_pixel[x , y]
 
-        if r <= 120 and g >= 170 and b <= 120:
+        if r <= 150 and g >= 170 and b <= 150:
 
-            (r, g, b) = pixels_original[x,y]
+            (r, g, b) = pixels_original[x,y]            
 
-            new_red = r + 50
+            pixels_new[x,y] = (r, g, b)
 
-            pixels_new[x,y] = (new_red, g, b)
         else:
             (r, g, b) = cactus_pixel[x , y]
 
@@ -33,9 +40,5 @@ for x in range(0, 800):
 image_new.show()
 
 image_new.save("the_new_image.jpg")
-
-question = input("\nWhat did you see? ")
-
-print(f"\nYou saw {question}")
 
 print("\nThank for your participation!")
