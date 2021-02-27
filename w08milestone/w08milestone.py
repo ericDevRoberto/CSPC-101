@@ -8,6 +8,10 @@ print("\nObjects: BOAT - CACTUS - CAT - HARVESTER - HIKER - PENGUIN - SPACESHUTT
 
 item = input("\nChoose a object among that: ").lower()
 
+print("\nFilters: RED - BLUE - GREEN - NONE")
+
+filter = input("\nChoose a filter among that: ").lower()
+
 image_original = Image.open(f"{scenario}.jpg")
 
 cactus_image = Image.open(f"{item}.jpg")
@@ -24,13 +28,39 @@ for x in range(0, 800):
 
     for y in range(0, 600):
 
-        (r, g, b) = cactus_pixel[x , y]
+        (r, g, b) = cactus_pixel[x , y]        
 
         if r <= 150 and g >= 170 and b <= 150:
 
-            (r, g, b) = pixels_original[x,y]            
+            if filter == "red":
 
-            pixels_new[x,y] = (r, g, b)
+                (r, g, b) = pixels_original[x,y]
+
+                r = r + 100         
+
+                pixels_new[x,y] = (r, g, b)
+
+            elif filter == "blue":
+                
+                (r, g, b) = pixels_original[x,y]
+
+                b = b + 100         
+
+                pixels_new[x,y] = (r, g, b)
+            
+            elif filter == "green":
+                
+                (r, g, b) = pixels_original[x,y]
+
+                g = g + 100         
+
+                pixels_new[x,y] = (r, g, b)
+            
+            else:
+
+                (r, g, b) = pixels_original[x,y]        
+
+                pixels_new[x,y] = (r, g, b)
 
         else:
             (r, g, b) = cactus_pixel[x , y]
