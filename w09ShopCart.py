@@ -61,6 +61,8 @@ while option != 5:
 
     elif option == 4:
 
+        total = 0
+
         for n in range(len(cart_prices)):
 
             price = cart_prices[n] * quantities[n]
