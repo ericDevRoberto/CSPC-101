@@ -1,5 +1,9 @@
-x = 5
+def display_numbers(x, y):
 
-x += 1
+    x = 10
 
-print(x)
+x = 3
+
+y = 4
+
+print(display_numbers(x, y))
